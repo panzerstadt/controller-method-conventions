@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Controller Method Conventions</title>
+  </head>
+  <body class="bg-gray-100 flex justify-center items-center">
+    <div class="w-11/12 sm:w-8/12 mx-auto">
+      <div
+        class="my-8 sm:my-16 rounded-lg bg-white p-6 mb-4 border border-gray-200"
+      >
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">MVC's C</h2>
+        <p class="text-xs">
+          some conventions found in many modern MVC frameworks, like Laravel,
+          AdonisJS, Ruby on Rails
+        </p>
+      </div>
+      <div
+        class="rounded-lg bg-white p-6 mb-4 border border-gray-200 text-gray-900 hover:shadow-md"
+      >
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Methods</h2>
+        <div class="my-6 opacity-75 hover:opacity-100">
+          <h3
+            class="font-bold text-gray-900 w-64 flex justify-between items-end"
+          >
+            <span>index()</span>
+            <small class="text-indigo-700 font-mono font-normal ml-2"
+              >"PhotoController.index"</small
+            >
+          </h3>
+          <p class="text-xs font-bold text-indigo-500">GET</p>
+          <p class="text-xs">
+            usually a GET request to the main endpoint, e.g. "/photos". This is
+            the "R" of your CRUD
+          </p>
+        </div>
+        <div class="my-6 opacity-75 hover:opacity-100">
+          <h3
+            class="font-bold text-gray-900 w-64 flex justify-between items-end"
+          >
+            <span>create()</span>
+            <small class="text-indigo-700 font-mono font-normal ml-2"
+              >"PhotoController.create"</small
+            >
+          </h3>
+          <p class="text-xs font-bold text-indigo-500">GET</p>
+          <p class="text-xs">
+            the endpoint doesn't create, but is used to point to a page with a
+            form to create a new "thing" e.g. "/photos/create" meaning something
+            like "add new photo page"
+          </p>
+        </div>
+        <div class="my-6 opacity-75 hover:opacity-100">
+          <h3
+            class="font-bold text-gray-900 w-64 flex justify-between items-end"
+          >
+            <span>store()</span>
+            <small class="text-indigo-700 font-mono font-normal ml-2"
+              >"PhotoController.store"</small
+            >
+          </h3>
+          <p class="text-xs font-bold text-indigo-500">POST</p>
+          <p class="text-xs">
+            the "C" of CRUD. endpoint to save a user submitted form to the
+            database
+          </p>
+        </div>
+        <div class="my-6 opacity-75 hover:opacity-100">
+          <h3
+            class="font-bold text-gray-900 w-64 flex justify-between items-end"
+          >
+            <span>show()</span>
+            <small class="text-indigo-700 font-mono font-normal ml-2"
+              >"PhotoController.show"</small
+            >
+          </h3>
+          <p class="text-xs font-bold text-indigo-500">GET</p>
+          <p class="text-xs">
+            show page by id, usually has a wildcard to match an id, e.g.
+            "/photos/:id" --> "/photos/50" shows photo number 50
+          </p>
+        </div>
+        <div class="my-6 opacity-75 hover:opacity-100">
+          <h3
+            class="font-bold text-gray-900 w-64 flex justify-between items-end"
+          >
+            <span>edit()</span>
+            <small class="text-indigo-700 font-mono font-normal ml-2"
+              >"PhotoController.edit"</small
+            >
+          </h3>
+          <p class="text-xs font-bold text-indigo-500">GET</p>
+          <p class="text-xs">
+            again, not this endpoint doesn't do the editing, but rather shows a
+            form to edit stuff e.g. "/photos/:id/edit" --> "/photos/36/edit"
+            means show me the edit form for photo number 36 (cause i wanna add a
+            description or tags)
+          </p>
+        </div>
+        <div class="my-6 opacity-75 hover:opacity-100">
+          <h3
+            class="font-bold text-gray-900 w-64 flex justify-between items-end"
+          >
+            <span>update()</span>
+            <small class="text-indigo-700 font-mono font-normal ml-2"
+              >"PhotoController.update"</small
+            >
+          </h3>
+          <p class="text-xs font-bold text-indigo-500">PUT/PATCH</p>
+          <p class="text-xs">
+            the "U" of CRUD. endpoint to update details for a given user
+            provided id (usually through the UI on the "/edit" route)
+          </p>
+        </div>
+        <div class="my-6 opacity-75 hover:opacity-100">
+          <h3
+            class="font-bold text-gray-900 w-64 flex justify-between items-end"
+          >
+            <span>destroy()</span>
+            <small class="text-indigo-700 font-mono font-normal ml-2"
+              >"PhotoController.destroy"</small
+            >
+          </h3>
+          <p class="text-xs font-bold text-indigo-500">DELETE</p>
+          <p class="text-xs">
+            the "D" of CRUD. endpoint to delete a datapoint by the given id
+            (which usually corresponds to a row in your database)
+          </p>
+        </div>
+      </div>
+      <div
+        class="rounded-lg bg-white p-6 mb-24 border border-gray-200 flex flex-col hover:shadow-md"
+      >
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Sources</h2>
+        <a
+          class="text-blue-500 hover:text-blue-800 my-1"
+          href="https://adonisjs.com/docs/3.2/routing#_resourceful_routes"
+          >Adonisjs: Resourceful Routes</a
+        >
+        <a
+          class="text-blue-500 hover:text-blue-800 my-1"
+          href="https://webdevetc.com/blog/laravel-naming-conventions"
+          >Laravel Naming Conventions</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

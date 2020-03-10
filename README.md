@@ -1,1 +1,1 @@
-https://controller-method-conventions.panzerstadt.now.sh
+https://panzerstadt.github.io/controller-method-conventions/index.html
